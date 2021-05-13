@@ -11,8 +11,8 @@ struct ProgressViewModifier: ViewModifier {
     }
 }
 
-public extension ProgressView {
-    func progressStyle(color: Color = Color(.label)) -> some View {
+extension ProgressView {
+    public func progressStyle(color: Color = Color(.label)) -> some View {
         modifier(ProgressViewModifier(color: color))
     }
 }
