@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct ProgressViewModifier: ViewModifier {
-    var color: Color
+    let color: Color
+    
     func body(content: Content) -> some View {
         content
             .foregroundColor(color)
@@ -12,6 +13,6 @@ struct ProgressViewModifier: ViewModifier {
 
 extension ProgressView {
     public func progressStyle(color: Color = Color(.label)) -> some View {
-        self.modifier(ProgressViewModifier(color: color))
+        modifier(ProgressViewModifier(color: color))
     }
 }
