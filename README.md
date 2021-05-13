@@ -1,3 +1,3 @@
 # ProgressViewModifier
 
-A description of this package.
+Create a spinning Progress indicator with user selectable color.
