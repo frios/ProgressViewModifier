@@ -5,7 +5,7 @@ struct ProgressViewModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .frame(width: 150)
+            .frame(width: 300)
             .lineLimit(2)
             .foregroundColor(color)
             .scaleEffect(1.5, anchor: .center)
