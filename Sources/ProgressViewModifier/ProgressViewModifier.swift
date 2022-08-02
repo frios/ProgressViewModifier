@@ -1,24 +1,37 @@
 import SwiftUI
+import UIKit
 
 struct ProgressViewModifier: ViewModifier {
+    let width: Double
+    let height: Double
+    let fontSize: Double
     let color: Color
     let bkColor: Color?
     
     func body(content: Content) -> some View {
         content
-            .frame(width: 500)
+            .font(.system(size: fontSize))
+            .frame(width: width, height: height)
             .lineLimit(2)
             .foregroundColor(color)
             .scaleEffect(1.5, anchor: .center)
             .progressViewStyle(CircularProgressViewStyle(tint: color))
             .background(RoundedRectangle(cornerRadius: 5.0)
                 .foregroundColor(bkColor)
-                .frame(width: 500, height: 200))
+                .frame(width: width, height: height))
     }
 }
 
 extension ProgressView {
-    public func progressStyle(color: Color, bkColor: Color? = nil) -> some View {
-        modifier(ProgressViewModifier(color: color, bkColor: bkColor))
+    public func progressStyle(width: Double = 500.00,
+                              height: Double = 300,
+                              fontSize: Double = 17.0,
+                              color: Color,
+                              bkColor: Color? = nil) -> some View {
+        modifier(ProgressViewModifier(width: width,
+                                      height: height,
+                                      fontSize: fontSize,
+                                      color: color,
+                                      bkColor: bkColor))
     }
 }
