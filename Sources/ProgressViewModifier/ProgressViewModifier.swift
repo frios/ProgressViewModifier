@@ -11,7 +11,9 @@ struct ProgressViewModifier: ViewModifier {
             .foregroundColor(color)
             .scaleEffect(1.5, anchor: .center)
             .progressViewStyle(CircularProgressViewStyle(tint: color))
-            .background(RoundedRectangle(cornerRadius: 5.0).foregroundColor(bkColor))
+            .background(RoundedRectangle(cornerRadius: 5.0)
+                .foregroundColor(bkColor)
+                .frame(width: 500, height: 200))
     }
 }
 
