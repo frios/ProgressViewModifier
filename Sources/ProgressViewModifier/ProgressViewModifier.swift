@@ -10,13 +10,12 @@ struct ProgressViewModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-//            .frame(width: width, height: height)
             .background(RoundedRectangle(cornerRadius: 20.0)
                 .foregroundColor(bkColor)
                 .frame(width: width, height: height))
             .font(.system(size: fontSize))
             .lineLimit(2)
-            .foregroundColor(color)
+            .tint(color)
             .scaleEffect(1.0, anchor: .center)
             .progressViewStyle(CircularProgressViewStyle(tint: color))
     }
