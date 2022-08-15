@@ -7,6 +7,7 @@ struct ProgressViewModifier: ViewModifier {
     let fontSize: Double
     let color: Color
     let bkColor: Color
+    let scale: Double
     
     func body(content: Content) -> some View {
         content
@@ -17,7 +18,7 @@ struct ProgressViewModifier: ViewModifier {
             .lineLimit(2)
             .foregroundColor(color)
             .progressViewStyle(CircularProgressViewStyle(tint: color))
-            .scaleEffect(1.0, anchor: .center)
+            .scaleEffect(scale, anchor: .center)
     }
 }
 
@@ -26,11 +27,13 @@ extension ProgressView {
                               height: Double = 300,
                               fontSize: Double = 17.0,
                               color: Color,
-                              bkColor: Color = .clear) -> some View {
+                              bkColor: Color = .clear,
+                              scale: Double = 1.0) -> some View {
         modifier(ProgressViewModifier(width: width,
                                       height: height,
                                       fontSize: fontSize,
                                       color: color,
-                                      bkColor: bkColor))
+                                      bkColor: bkColor,
+                                      scale: scale))
     }
 }
